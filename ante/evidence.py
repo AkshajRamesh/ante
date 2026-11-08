@@ -23,7 +23,7 @@ SOURCES = {
 _INTENTS = (
     ("bottom", ("bottom ten", "bottom 10", "replace the", "replacement", "house win rank", "demand-adjusted", "demand rank")),
     ("inspect", ("m-1158", "1158", "inspect", "inspection", "paytable", "payout pattern", "hit rate", "malfunction")),
-    ("invest", ("13,272", "13272", "93,400", "93400", "6,600", "6600", "unspent", "remaining", "budget", "invest", "net theo", "net benefit", "confident", "uncertain", "not spending", "aren't we spending", "leave")),
+    ("invest", ("13,272", "13272", "93,400", "93400", "6,600", "6600", "unspent", "remaining", "budget", "invest", "net theo", "net benefit", "confident", "uncertain", "not spending", "aren't we spending", "leave", "low case", "high case", "central case")),
     ("forecast", ("ridge", "weekday", "forecast", "baseline", "holdout", "mae", "prediction interval")),
     ("loyalty", ("may 1", "may 1st", "loyalty", "comp price", "points", "policy change")),
     ("closure", ("back forty", "walkway", "closure", "relocat", "moving machines", "move machines")),
@@ -70,6 +70,70 @@ class Packet:
 
 def blocks_personal_targeting(question: str) -> bool:
     return _BLOCKED.search(question or "") is not None
+
+
+OUT_OF_SCOPE = (
+    "Sorry, I can only answer questions about ante's dashboard and The Gilded Ace's casino analysis."
+)
+NO_EVIDENCE = (
+    "I don't have enough evidence in the dashboard to answer that reliably. "
+    "Try asking about machine performance, demand, downtime, loyalty, investments, or forecasting."
+)
+
+# A question the Gold topics do not cover. "Hotel Corridor" is a real zone and does not match these.
+_MISSING_TOPIC = re.compile(
+    r"hotel booking|hotel bookings|room revenue|hotel revenue|restaurant|"
+    r"food and beverage|\bf&b\b|\bspa\b|parking revenue|sportsbook|"
+    r"\bpoker\b|table games?|concert revenue|occupancy",
+    re.IGNORECASE,
+)
+
+# Off-topic only when the question is not also about a Gold topic.
+_OFF_TOPIC = re.compile(
+    r"(?:"
+    r"\d+(?:\.\d+)?\s*(?:[+\-*/x×]|plus|minus|times|divided(?:\s+by)?)\s*\d+"
+    r"|world cup|super bowl|olympics?"
+    r"|\bweather\b"
+    r"|\bpoem\b|\bhaiku\b|\blyrics\b|\bjoke\b|\brecipe\b"
+    r"|write (?:me )?(?:a )?(?:poem|story|song|essay)"
+    r"|\bcapital of\b|\bpresident of\b"
+    r")",
+    re.IGNORECASE,
+)
+
+
+def _specific_gold(text: str) -> bool:
+    return any(score > 0 for _, score in _scores(text or ""))
+
+
+def _is_follow_up(question: str, prior: str) -> bool:
+    # Short references stay attached to the previous dashboard question.
+    # A new off-topic question is not a follow-up, even if one came before it.
+    if not prior.strip():
+        return False
+    if (_OFF_TOPIC.search(question) or _MISSING_TOPIC.search(question)) and not _specific_gold(question):
+        return False
+    words = re.findall(r"[A-Za-z0-9']+", question)
+    if len(words) <= 8:
+        return True
+    return re.search(r"\b(that|this|those|low case|high case|central case)\b", question, re.IGNORECASE) is not None
+
+
+def refusal(question: str, prior: str = "") -> str | None:
+    # None means the question may be sent to Gemini with a Gold packet.
+    # A string is the whole reply, and the model is not called.
+    text = " ".join((question or "").split())
+    if not text or blocks_personal_targeting(text):
+        return None
+    if _MISSING_TOPIC.search(text) and not _specific_gold(text):
+        return NO_EVIDENCE
+    follow = _is_follow_up(text, prior or "")
+    topical = _specific_gold(text) or (follow and _specific_gold(prior or ""))
+    if _OFF_TOPIC.search(text) and not topical:
+        return OUT_OF_SCOPE
+    if not topical:
+        return NO_EVIDENCE
+    return None
 
 
 def retrieve(source: SnapshotGold, question: str, prior: str = "") -> Packet:

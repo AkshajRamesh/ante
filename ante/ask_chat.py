@@ -4,7 +4,7 @@ from __future__ import annotations
 import streamlit as st
 
 from ante.analyst import SESSION_LIMIT, AnalystError, ask
-from ante.evidence import retrieve
+from ante.evidence import NO_EVIDENCE, refusal, retrieve
 from ante.ui import gold
 
 SUGGESTED = (
@@ -48,9 +48,13 @@ def _complete(viewing: str) -> None:
     history = [
         {"role": item["role"], "text": item["text"]}
         for item in messages[:-1]
-        if not item.get("error")
+        if not item.get("error") and not item.get("local")
     ]
     try:
+        skipped = refusal(question, prior)
+        if skipped:
+            messages.append({"role": "assistant", "text": skipped, "local": True})
+            return
         packet = retrieve(gold(), question, prior)
         if packet.blocked:
             messages.append({
@@ -58,6 +62,9 @@ def _complete(viewing: str) -> None:
                 "text": "ante will not ask Gemini how to target an individual guest from losses.",
                 "local": True,
             })
+            return
+        if packet.insufficient or not packet.facts:
+            messages.append({"role": "assistant", "text": NO_EVIDENCE, "local": True})
             return
         cache_key = "brief\n" + question + "\n" + prior
         cached = st.session_state.ask_cache.get(cache_key)
@@ -103,7 +110,7 @@ def _styles() -> None:
         .st-key-ask_dock {
             position: fixed !important;
             right: 1.05rem !important;
-            bottom: 1.05rem !important;
+            bottom: calc(1.05rem + 60px) !important;
             z-index: 1000002 !important;
             margin: 0 !important;
         }
@@ -215,9 +222,9 @@ def _styles() -> None:
         @media (max-width: 700px) {
             .st-key-ask_dock:has(.ask-panel) {
                 right: 0.5rem !important;
-                bottom: 0.5rem !important;
+                bottom: calc(0.5rem + 60px) !important;
                 width: calc(100vw - 1rem) !important;
-                max-height: 78vh;
+                max-height: min(70vh, calc(100dvh - 8.5rem));
             }
             .st-key-ask_launcher button::before { font-size: 1.02rem; }
             .st-key-ask_launcher button::after { font-size: 0.62rem; }
@@ -286,10 +293,16 @@ def ask_dock(viewing: str) -> None:
     _styles()
     messages = st.session_state.ask_messages
     if st.session_state.ask_panel and messages and messages[-1]["role"] == "user":
-        with st.container(key="ask_dock", border=False, width="content"):
-            st.html('<p class="ask-title">Ask ante</p><span class="ask-panel"></span>', width="content")
-            st.caption("Powered by Gemini")
-            with st.spinner("Asking Gemini…"):
-                _complete(viewing)
+        question = messages[-1]["text"]
+        earlier = [item["text"] for item in messages[:-1] if item["role"] == "user"]
+        prior = earlier[-1] if earlier else ""
+        if refusal(question, prior) is None:
+            with st.container(key="ask_dock", border=False, width="content"):
+                st.html('<p class="ask-title">Ask ante</p><span class="ask-panel"></span>', width="content")
+                st.caption("Powered by Gemini")
+                with st.spinner("Asking Gemini…"):
+                    _complete(viewing)
+        else:
+            _complete(viewing)
         st.rerun(scope="fragment")
     _draw(viewing)
