@@ -54,23 +54,29 @@ def install_type() -> None:
     st.html(
         """
         <style>
+        /* Local Streamlit serves these at /app/static. Community Cloud mounts the
+           app at /~/+/, and a root /app/static request returns the host page
+           instead of the file. The first source that decodes is the one used. */
         @font-face {
             font-family: "Redaction35";
-            src: url("/app/static/fonts/Redaction35-Regular.ttf") format("truetype");
+            src: url("/app/static/fonts/Redaction35-Regular.ttf") format("truetype"),
+                 url("/~/+/app/static/fonts/Redaction35-Regular.ttf") format("truetype");
             font-weight: 400;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: "Redaction35";
-            src: url("/app/static/fonts/Redaction35-Bold.ttf") format("truetype");
+            src: url("/app/static/fonts/Redaction35-Bold.ttf") format("truetype"),
+                 url("/~/+/app/static/fonts/Redaction35-Bold.ttf") format("truetype");
             font-weight: 700;
             font-style: normal;
             font-display: swap;
         }
         @font-face {
             font-family: "Redaction35";
-            src: url("/app/static/fonts/Redaction35-Italic.ttf") format("truetype");
+            src: url("/app/static/fonts/Redaction35-Italic.ttf") format("truetype"),
+                 url("/~/+/app/static/fonts/Redaction35-Italic.ttf") format("truetype");
             font-weight: 400;
             font-style: italic;
             font-display: swap;

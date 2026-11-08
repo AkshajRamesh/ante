@@ -25,19 +25,19 @@ paddingBottom = "2.5rem"
 
 [[theme.fontFaces]]
 family = "Redaction35"
-url = "/app/static/fonts/Redaction35-Regular.ttf"
+url = "app/static/fonts/Redaction35-Regular.ttf"
 weight = 400
 style = "normal"
 
 [[theme.fontFaces]]
 family = "Redaction35"
-url = "/app/static/fonts/Redaction35-Bold.ttf"
+url = "app/static/fonts/Redaction35-Bold.ttf"
 weight = 700
 style = "normal"
 
 [[theme.fontFaces]]
 family = "Redaction35"
-url = "/app/static/fonts/Redaction35-Italic.ttf"
+url = "app/static/fonts/Redaction35-Italic.ttf"
 weight = 400
 style = "italic"
 
