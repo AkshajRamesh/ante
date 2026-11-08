@@ -1,0 +1,34 @@
+# secrets and credentials
+.streamlit/secrets.toml
+secrets.toml
+.env
+.env.*
+.databrickscfg
+.databricks/
+*.pem
+*.key
+*.p12
+*.pfx
+*token*.json
+*credentials*.json
+
+# source data and local analysis outputs
+data/
+outputs/
+
+# environments and caches
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# editor and os files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log

@@ -1,0 +1,53 @@
+[server]
+enableStaticServing = true
+
+[theme]
+base = "dark"
+primaryColor = "#c4a35a"
+backgroundColor = "#0c1220"
+secondaryBackgroundColor = "#161d2e"
+textColor = "#f3efe4"
+borderColor = "#33415c"
+linkColor = "#e0c98a"
+codeBackgroundColor = "#12192a"
+baseRadius = "4px"
+showWidgetBorder = true
+showSidebarBorder = true
+font = "Manrope:https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap"
+headingFont = "Redaction35, serif"
+headingFontSizes = ["4.5rem", "2.35rem", "1.55rem", "1.2rem", "1.05rem", "0.95rem"]
+headingFontWeights = [400, 400, 400, 400, 400, 400]
+metricValueFontSize = "1.85rem"
+metricValueFontWeight = 500
+chartCategoricalColors = ["#c4a35a", "#3f8f78", "#f3efe4", "#8ea0b8", "#a07848", "#6e9b8a"]
+paddingTop = "0.75rem"
+paddingBottom = "2.5rem"
+
+[[theme.fontFaces]]
+family = "Redaction35"
+url = "/app/static/fonts/Redaction35-Regular.ttf"
+weight = 400
+style = "normal"
+
+[[theme.fontFaces]]
+family = "Redaction35"
+url = "/app/static/fonts/Redaction35-Bold.ttf"
+weight = 700
+style = "normal"
+
+[[theme.fontFaces]]
+family = "Redaction35"
+url = "/app/static/fonts/Redaction35-Italic.ttf"
+weight = 400
+style = "italic"
+
+[theme.sidebar]
+backgroundColor = "#10182a"
+secondaryBackgroundColor = "#0c1220"
+textColor = "#f3efe4"
+borderColor = "#2c3a52"
+primaryColor = "#c4a35a"
+linkColor = "#e0c98a"
+headingFont = "Redaction35, serif"
+headingFontSizes = ["1.85rem", "1.15rem", "1rem", "0.95rem", "0.85rem", "0.75rem"]
+headingFontWeights = [400, 400, 400, 400, 400, 400]

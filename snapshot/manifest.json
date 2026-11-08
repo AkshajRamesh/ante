@@ -1,0 +1,1741 @@
+{
+  "build_id": "26107b2d4a24",
+  "built_at": "2026-11-08 00:39:41",
+  "source": "workspace.ante_gold",
+  "min_cell_players": 20,
+  "note": "aggregated gold tables only; no player-level records; regenerate with scripts/build-gold.py",
+  "tables": [
+    {
+      "table": "gold_machine_daily",
+      "file": "gold_machine_daily.parquet",
+      "rows": 55092,
+      "sha256": "e44c6494e28c0d47424d9f84f7bf96a4a0f3c3988413e459743a7f32bfae3417",
+      "keys": [
+        "machine_id",
+        "gaming_date"
+      ],
+      "columns": [
+        {
+          "name": "gaming_date",
+          "type": "DATE"
+        },
+        {
+          "name": "month",
+          "type": "STRING"
+        },
+        {
+          "name": "local_weekday",
+          "type": "STRING"
+        },
+        {
+          "name": "is_weekend",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "federal_holiday",
+          "type": "STRING"
+        },
+        {
+          "name": "events_active",
+          "type": "STRING"
+        },
+        {
+          "name": "closure_period",
+          "type": "STRING"
+        },
+        {
+          "name": "machine_id",
+          "type": "STRING"
+        },
+        {
+          "name": "location_id",
+          "type": "STRING"
+        },
+        {
+          "name": "bank_id",
+          "type": "STRING"
+        },
+        {
+          "name": "zone_id",
+          "type": "STRING"
+        },
+        {
+          "name": "zone_name",
+          "type": "STRING"
+        },
+        {
+          "name": "config_id",
+          "type": "STRING"
+        },
+        {
+          "name": "theme",
+          "type": "STRING"
+        },
+        {
+          "name": "manufacturer",
+          "type": "STRING"
+        },
+        {
+          "name": "lease_class",
+          "type": "STRING"
+        },
+        {
+          "name": "volatility_class",
+          "type": "STRING"
+        },
+        {
+          "name": "configured_rtp",
+          "type": "DECIMAL(10,8)"
+        },
+        {
+          "name": "coin_in_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "payout_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "house_win_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "theo_usd",
+          "type": "DECIMAL(18,4)"
+        },
+        {
+          "name": "luck_residual_usd",
+          "type": "DECIMAL(18,4)"
+        },
+        {
+          "name": "carded_coin_in_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "carded_theo_usd",
+          "type": "DECIMAL(20,4)"
+        },
+        {
+          "name": "lease_cost_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "service_cost_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "power_cost_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "repair_cost_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "contribution_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "scheduled_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "available_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "occupied_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "faults_opened",
+          "type": "BIGINT"
+        },
+        {
+          "name": "paid_spins",
+          "type": "BIGINT"
+        },
+        {
+          "name": "hit_spins",
+          "type": "BIGINT"
+        },
+        {
+          "name": "expected_hit_spins",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "hit_variance",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_variance_usd2",
+          "type": "DOUBLE"
+        }
+      ]
+    },
+    {
+      "table": "gold_machine_scorecard",
+      "file": "gold_machine_scorecard.parquet",
+      "rows": 310,
+      "sha256": "ec670c38ec5b667df52ebf94f23c4d92d986137fedeef2f60dc8dc6db8ffe580",
+      "keys": [
+        "machine_id"
+      ],
+      "columns": [
+        {
+          "name": "machine_id",
+          "type": "STRING"
+        },
+        {
+          "name": "primary_zone",
+          "type": "STRING"
+        },
+        {
+          "name": "moved",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "first_location_id",
+          "type": "STRING"
+        },
+        {
+          "name": "last_location_id",
+          "type": "STRING"
+        },
+        {
+          "name": "last_bank_id",
+          "type": "STRING"
+        },
+        {
+          "name": "config_id",
+          "type": "STRING"
+        },
+        {
+          "name": "theme",
+          "type": "STRING"
+        },
+        {
+          "name": "manufacturer",
+          "type": "STRING"
+        },
+        {
+          "name": "lease_class",
+          "type": "STRING"
+        },
+        {
+          "name": "volatility",
+          "type": "STRING"
+        },
+        {
+          "name": "configured_rtp",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "hit_probability",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "lifecycle_status",
+          "type": "STRING"
+        },
+        {
+          "name": "install_date",
+          "type": "DATE"
+        },
+        {
+          "name": "retire_date",
+          "type": "DATE"
+        },
+        {
+          "name": "first_active_date",
+          "type": "DATE"
+        },
+        {
+          "name": "last_active_date",
+          "type": "DATE"
+        },
+        {
+          "name": "on_floor_at_window_end",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "days_on_floor",
+          "type": "INT"
+        },
+        {
+          "name": "scheduled_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "available_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "occupied_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "availability",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "occupancy",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "paid_spins",
+          "type": "BIGINT"
+        },
+        {
+          "name": "hit_spins",
+          "type": "BIGINT"
+        },
+        {
+          "name": "coin_in_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "house_win_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "theo_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_residual_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "contribution_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "observed_hold",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "theo_hold",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "house_win_per_day",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "contribution_per_day",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "coin_in_per_avail_hour",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "theo_per_avail_hour",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "house_win_per_avail_hour",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "zone_rank_theo_per_hour",
+          "type": "INT"
+        },
+        {
+          "name": "zone_size",
+          "type": "INT"
+        },
+        {
+          "name": "baseline_theo_per_avail_hour",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "demand_index",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "actual_win_index",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_sd_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_z",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_p_bonferroni",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "hit_rate",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "hit_z",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "rank_total_house_win",
+          "type": "INT"
+        },
+        {
+          "name": "rank_house_win_per_day",
+          "type": "INT"
+        },
+        {
+          "name": "rank_theo_per_hour",
+          "type": "INT"
+        },
+        {
+          "name": "rank_demand_index",
+          "type": "INT"
+        },
+        {
+          "name": "rank_actual_win_index",
+          "type": "INT"
+        },
+        {
+          "name": "rank_contribution_per_day",
+          "type": "INT"
+        },
+        {
+          "name": "rank_luck_z",
+          "type": "INT"
+        },
+        {
+          "name": "in_original_bottom_10",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "in_demand_bottom_10",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "in_actual_win_bottom_10",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "downtime_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_fault_waiting_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "faults",
+          "type": "INT"
+        },
+        {
+          "name": "expected_faults",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "fault_excess_z",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "repeat_faults",
+          "type": "INT"
+        },
+        {
+          "name": "mean_repair_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "repair_direct_cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "est_gross_lost_theo_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "flag_payout_pattern",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "flag_luck_unlikely",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "flag_excess_faults",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "flag_low_demand",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "flag_partial_window",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "requires_investigation",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "review_notes",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_bottom_ten",
+      "file": "gold_bottom_ten.parquet",
+      "rows": 40,
+      "sha256": "dadaa91ff2f43c4c2fcd687f0ede2df282c9137a0a95e024590ba742bfd00f50",
+      "keys": [
+        "list_name",
+        "list_rank"
+      ],
+      "columns": [
+        {
+          "name": "list_name",
+          "type": "STRING"
+        },
+        {
+          "name": "adjustment",
+          "type": "STRING"
+        },
+        {
+          "name": "list_rank",
+          "type": "INT"
+        },
+        {
+          "name": "machine_id",
+          "type": "STRING"
+        },
+        {
+          "name": "primary_zone",
+          "type": "STRING"
+        },
+        {
+          "name": "config_id",
+          "type": "STRING"
+        },
+        {
+          "name": "theme",
+          "type": "STRING"
+        },
+        {
+          "name": "lifecycle_status",
+          "type": "STRING"
+        },
+        {
+          "name": "on_floor_at_window_end",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "days_on_floor",
+          "type": "INT"
+        },
+        {
+          "name": "metric_name",
+          "type": "STRING"
+        },
+        {
+          "name": "metric_value",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "house_win_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "theo_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_residual_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "luck_z",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "availability",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "theo_per_avail_hour",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "demand_index",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "actual_win_index",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "in_original_bottom_10",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "flag_payout_pattern",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "requires_investigation",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "review_notes",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_zone_daily",
+      "file": "gold_zone_daily.parquet",
+      "rows": 1267,
+      "sha256": "64be25dd0f158efedf0903ec7b3f3177e535c0c6e7ee5a4aa3b7f987568201d0",
+      "keys": [
+        "zone_id",
+        "gaming_date"
+      ],
+      "columns": [
+        {
+          "name": "gaming_date",
+          "type": "DATE"
+        },
+        {
+          "name": "month",
+          "type": "STRING"
+        },
+        {
+          "name": "local_weekday",
+          "type": "STRING"
+        },
+        {
+          "name": "is_weekend",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "federal_holiday",
+          "type": "STRING"
+        },
+        {
+          "name": "events_active",
+          "type": "STRING"
+        },
+        {
+          "name": "closure_period",
+          "type": "STRING"
+        },
+        {
+          "name": "zone_id",
+          "type": "STRING"
+        },
+        {
+          "name": "zone_name",
+          "type": "STRING"
+        },
+        {
+          "name": "machines",
+          "type": "BIGINT"
+        },
+        {
+          "name": "coin_in_usd",
+          "type": "DECIMAL(28,2)"
+        },
+        {
+          "name": "payout_usd",
+          "type": "DECIMAL(28,2)"
+        },
+        {
+          "name": "house_win_usd",
+          "type": "DECIMAL(28,2)"
+        },
+        {
+          "name": "theo_usd",
+          "type": "DECIMAL(28,4)"
+        },
+        {
+          "name": "luck_residual_usd",
+          "type": "DECIMAL(28,4)"
+        },
+        {
+          "name": "carded_coin_in_usd",
+          "type": "DECIMAL(28,2)"
+        },
+        {
+          "name": "scheduled_machine_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "available_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "occupied_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "faults_opened",
+          "type": "BIGINT"
+        },
+        {
+          "name": "paid_spins",
+          "type": "BIGINT"
+        },
+        {
+          "name": "entries_observed",
+          "type": "BIGINT"
+        },
+        {
+          "name": "covered_sensor_hours",
+          "type": "DECIMAL(27,6)"
+        },
+        {
+          "name": "scheduled_sensor_hours",
+          "type": "DECIMAL(27,6)"
+        },
+        {
+          "name": "ok_sensor_hours",
+          "type": "BIGINT"
+        },
+        {
+          "name": "partial_sensor_hours",
+          "type": "BIGINT"
+        },
+        {
+          "name": "offline_sensor_hours",
+          "type": "BIGINT"
+        }
+      ]
+    },
+    {
+      "table": "gold_property_daily",
+      "file": "gold_property_daily.parquet",
+      "rows": 181,
+      "sha256": "15c7751856436baa13c0e8b363b20735099e762b44c62f906c9604f3ee70caec",
+      "keys": [
+        "gaming_date"
+      ],
+      "columns": [
+        {
+          "name": "gaming_date",
+          "type": "DATE"
+        },
+        {
+          "name": "month",
+          "type": "STRING"
+        },
+        {
+          "name": "local_weekday",
+          "type": "STRING"
+        },
+        {
+          "name": "is_weekend",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "federal_holiday",
+          "type": "STRING"
+        },
+        {
+          "name": "events_active",
+          "type": "STRING"
+        },
+        {
+          "name": "closure_period",
+          "type": "STRING"
+        },
+        {
+          "name": "comp_policy_period",
+          "type": "STRING"
+        },
+        {
+          "name": "active_machines",
+          "type": "BIGINT"
+        },
+        {
+          "name": "coin_in_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "payout_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "house_win_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "theo_usd",
+          "type": "DECIMAL(18,4)"
+        },
+        {
+          "name": "luck_residual_usd",
+          "type": "DECIMAL(21,4)"
+        },
+        {
+          "name": "carded_coin_in_usd",
+          "type": "DECIMAL(28,2)"
+        },
+        {
+          "name": "carded_theo_usd",
+          "type": "DECIMAL(30,4)"
+        },
+        {
+          "name": "scheduled_machine_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "available_machine_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "occupied_machine_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "faults_opened",
+          "type": "BIGINT"
+        },
+        {
+          "name": "downtime_fault_repair_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_fault_waiting_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_move_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_scheduled_maintenance_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_install_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "downtime_retire_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "est_gross_lost_coin_in_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "est_gross_lost_theo_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "pos_cash_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "pos_cogs_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "comp_cost_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "comp_face_value_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "non_comp_cogs_usd",
+          "type": "DECIMAL(19,2)"
+        },
+        {
+          "name": "redemptions",
+          "type": "BIGINT"
+        },
+        {
+          "name": "points_earned",
+          "type": "BIGINT"
+        },
+        {
+          "name": "points_redeemed",
+          "type": "BIGINT"
+        },
+        {
+          "name": "comp_tickets",
+          "type": "BIGINT"
+        },
+        {
+          "name": "carded_cash_tickets",
+          "type": "BIGINT"
+        },
+        {
+          "name": "carded_cash_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "uncarded_tickets",
+          "type": "BIGINT"
+        },
+        {
+          "name": "uncarded_cash_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "total_zone_entries_observed",
+          "type": "BIGINT"
+        },
+        {
+          "name": "counter_coverage_share",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "machine_supplied_costs_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "contribution_after_supplied_costs_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "tech_labor_cost_usd",
+          "type": "DECIMAL(18,2)"
+        },
+        {
+          "name": "incidents_reported",
+          "type": "BIGINT"
+        }
+      ]
+    },
+    {
+      "table": "gold_downtime_tickets",
+      "file": "gold_downtime_tickets.parquet",
+      "rows": 1226,
+      "sha256": "2db6d0ffabb359b72711afb9337003e6a1a81971ce3846e03e0e3be198f3253e",
+      "keys": [
+        "operation_id"
+      ],
+      "columns": [
+        {
+          "name": "operation_id",
+          "type": "STRING"
+        },
+        {
+          "name": "opened_gaming_date",
+          "type": "DATE"
+        },
+        {
+          "name": "month",
+          "type": "STRING"
+        },
+        {
+          "name": "machine_id",
+          "type": "STRING"
+        },
+        {
+          "name": "location_id",
+          "type": "STRING"
+        },
+        {
+          "name": "bank_id",
+          "type": "STRING"
+        },
+        {
+          "name": "zone_id",
+          "type": "STRING"
+        },
+        {
+          "name": "zone_name",
+          "type": "STRING"
+        },
+        {
+          "name": "config_id",
+          "type": "STRING"
+        },
+        {
+          "name": "manufacturer",
+          "type": "STRING"
+        },
+        {
+          "name": "cause",
+          "type": "STRING"
+        },
+        {
+          "name": "opened_at_local",
+          "type": "TIMESTAMP_NTZ"
+        },
+        {
+          "name": "shift",
+          "type": "STRING"
+        },
+        {
+          "name": "total_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "waiting_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "work_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "record_lag_minutes",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "direct_cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "est_gross_lost_coin_in_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "est_gross_lost_theo_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "planned_headcount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "actual_headcount",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "tech_shortfall",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "queue_waiting",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "queue_in_work",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "days_since_previous_fix",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "repeat_within_window",
+          "type": "BOOLEAN"
+        }
+      ]
+    },
+    {
+      "table": "gold_player_segments",
+      "file": "gold_player_segments.parquet",
+      "rows": 105,
+      "sha256": "fbb9a9238ae341061222f0ba3d05055f1a211d43e09d00ebfdaf0fe277962f2d",
+      "keys": [
+        "period_month",
+        "dimension",
+        "segment"
+      ],
+      "columns": [
+        {
+          "name": "period_month",
+          "type": "STRING"
+        },
+        {
+          "name": "period_type",
+          "type": "STRING"
+        },
+        {
+          "name": "dimension",
+          "type": "STRING"
+        },
+        {
+          "name": "segment",
+          "type": "STRING"
+        },
+        {
+          "name": "suppressed",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "suppression_reason",
+          "type": "STRING"
+        },
+        {
+          "name": "players_seen",
+          "type": "BIGINT"
+        },
+        {
+          "name": "players_with_play",
+          "type": "BIGINT"
+        },
+        {
+          "name": "players_ahead",
+          "type": "BIGINT"
+        },
+        {
+          "name": "coin_in_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "payout_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "net_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "house_win_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "theo_usd",
+          "type": "DECIMAL(38,4)"
+        },
+        {
+          "name": "luck_residual_usd",
+          "type": "DECIMAL(38,4)"
+        },
+        {
+          "name": "player_losses_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "player_winnings_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "observed_visits",
+          "type": "BIGINT"
+        },
+        {
+          "name": "observed_visits_players_with_play",
+          "type": "BIGINT"
+        },
+        {
+          "name": "sessions",
+          "type": "BIGINT"
+        },
+        {
+          "name": "play_hours",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "comps_redeemed",
+          "type": "BIGINT"
+        },
+        {
+          "name": "comp_cost_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "comp_face_value_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "points_earned",
+          "type": "BIGINT"
+        },
+        {
+          "name": "points_redeemed",
+          "type": "BIGINT"
+        },
+        {
+          "name": "linked_pos_cash_usd",
+          "type": "DECIMAL(38,2)"
+        },
+        {
+          "name": "grouping_depends_on_outcomes",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_forecast_daily",
+      "file": "gold_forecast_daily.parquet",
+      "rows": 181,
+      "sha256": "8e1688e8718b27224a1da7c505d32d3de6271ddc1451545a1fc31a3afe455c08",
+      "keys": [
+        "gaming_date"
+      ],
+      "columns": [
+        {
+          "name": "gaming_date",
+          "type": "DATE"
+        },
+        {
+          "name": "local_weekday",
+          "type": "STRING"
+        },
+        {
+          "name": "sample",
+          "type": "STRING"
+        },
+        {
+          "name": "forecast_origin",
+          "type": "DATE"
+        },
+        {
+          "name": "horizon_days",
+          "type": "INT"
+        },
+        {
+          "name": "actual_coin_in_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "forecast_constant_mean_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "forecast_weekday_mean_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "forecast_ridge_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "forecast_ridge_low_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "forecast_ridge_high_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "actual_in_ridge_interval",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "abs_error_constant_mean_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "abs_error_weekday_mean_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "abs_error_ridge_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "events_active",
+          "type": "STRING"
+        },
+        {
+          "name": "federal_holiday",
+          "type": "STRING"
+        },
+        {
+          "name": "note",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_model_validation",
+      "file": "gold_model_validation.parquet",
+      "rows": 57,
+      "sha256": "2cc14f147740c7f8464508e4c263be186e9b52c297f3827565d7c39e81e930a9",
+      "keys": [
+        "section",
+        "model",
+        "period",
+        "metric"
+      ],
+      "columns": [
+        {
+          "name": "section",
+          "type": "STRING"
+        },
+        {
+          "name": "model",
+          "type": "STRING"
+        },
+        {
+          "name": "period",
+          "type": "STRING"
+        },
+        {
+          "name": "days",
+          "type": "BIGINT"
+        },
+        {
+          "name": "metric",
+          "type": "STRING"
+        },
+        {
+          "name": "value",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "ci_low",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "ci_high",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "note",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_investment_plan",
+      "file": "gold_investment_plan.parquet",
+      "rows": 4,
+      "sha256": "a63e8eb7a1d3049662694743c17777eed8c3da5ed4993f65489936d57b3aa025",
+      "keys": [
+        "action_type_id",
+        "target"
+      ],
+      "columns": [
+        {
+          "name": "action_type_id",
+          "type": "STRING"
+        },
+        {
+          "name": "action",
+          "type": "STRING"
+        },
+        {
+          "name": "target",
+          "type": "STRING"
+        },
+        {
+          "name": "detail",
+          "type": "STRING"
+        },
+        {
+          "name": "from_location",
+          "type": "STRING"
+        },
+        {
+          "name": "to_location",
+          "type": "STRING"
+        },
+        {
+          "name": "to_zone",
+          "type": "STRING"
+        },
+        {
+          "name": "order_date",
+          "type": "DATE"
+        },
+        {
+          "name": "earliest_effective_date",
+          "type": "DATE"
+        },
+        {
+          "name": "scheduled_date",
+          "type": "DATE"
+        },
+        {
+          "name": "downtime_minutes",
+          "type": "INT"
+        },
+        {
+          "name": "effect_days",
+          "type": "INT"
+        },
+        {
+          "name": "action_quantity",
+          "type": "INT"
+        },
+        {
+          "name": "action_total_cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "target_cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "target_downtime_cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "benefit_low_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "benefit_central_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "benefit_high_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "funding_basis",
+          "type": "STRING"
+        },
+        {
+          "name": "evidence_type",
+          "type": "STRING"
+        },
+        {
+          "name": "basis",
+          "type": "STRING"
+        },
+        {
+          "name": "notes",
+          "type": "STRING"
+        },
+        {
+          "name": "action_break_even",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "action_break_even_unit",
+          "type": "STRING"
+        },
+        {
+          "name": "target_break_even_cannibalization",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "machine_factor",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "game_appeal_factor",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "game_appeal_min_zone",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "game_appeal_max_zone",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "evidence_supports_funding",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "robust_or_verifiable",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "low_assumptions",
+          "type": "STRING"
+        },
+        {
+          "name": "central_assumptions",
+          "type": "STRING"
+        },
+        {
+          "name": "high_assumptions",
+          "type": "STRING"
+        },
+        {
+          "name": "in_budget_note",
+          "type": "STRING"
+        },
+        {
+          "name": "success_metric",
+          "type": "STRING"
+        },
+        {
+          "name": "control",
+          "type": "STRING"
+        },
+        {
+          "name": "observation_period",
+          "type": "STRING"
+        },
+        {
+          "name": "confounders",
+          "type": "STRING"
+        },
+        {
+          "name": "decision_rule",
+          "type": "STRING"
+        },
+        {
+          "name": "net_low_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "net_central_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "net_high_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "budget_usd",
+          "type": "INT"
+        },
+        {
+          "name": "plan_total_cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "unallocated_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_scenarios",
+      "file": "gold_scenarios.parquet",
+      "rows": 35,
+      "sha256": "b660c5a3541f1ed022f35615669ed90d152cc4c9dc4d007362a5582a641c10c4",
+      "keys": [
+        "scenario_id"
+      ],
+      "columns": [
+        {
+          "name": "scenario_id",
+          "type": "INT"
+        },
+        {
+          "name": "question",
+          "type": "STRING"
+        },
+        {
+          "name": "scenario_group",
+          "type": "STRING"
+        },
+        {
+          "name": "item",
+          "type": "STRING"
+        },
+        {
+          "name": "scenario",
+          "type": "STRING"
+        },
+        {
+          "name": "kind",
+          "type": "STRING"
+        },
+        {
+          "name": "value_measure",
+          "type": "STRING"
+        },
+        {
+          "name": "cost_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "value_low_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "value_central_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "value_high_usd",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "break_even",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "break_even_unit",
+          "type": "STRING"
+        },
+        {
+          "name": "feasible",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "in_recommended_plan",
+          "type": "BOOLEAN"
+        },
+        {
+          "name": "assumptions",
+          "type": "STRING"
+        },
+        {
+          "name": "source_file",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_evidence",
+      "file": "gold_evidence.parquet",
+      "rows": 409,
+      "sha256": "d2f399577609de3c63f4ca003cb71c0b967acea33062d3b96b186cefd9a4f522",
+      "keys": [
+        "evidence_id"
+      ],
+      "columns": [
+        {
+          "name": "evidence_id",
+          "type": "INT"
+        },
+        {
+          "name": "question",
+          "type": "STRING"
+        },
+        {
+          "name": "topic",
+          "type": "STRING"
+        },
+        {
+          "name": "metric",
+          "type": "STRING"
+        },
+        {
+          "name": "subgroup",
+          "type": "STRING"
+        },
+        {
+          "name": "comparison",
+          "type": "STRING"
+        },
+        {
+          "name": "estimate",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "ci_low",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "ci_high",
+          "type": "DOUBLE"
+        },
+        {
+          "name": "unit",
+          "type": "STRING"
+        },
+        {
+          "name": "evidence_class",
+          "type": "STRING"
+        },
+        {
+          "name": "causal_interpretation",
+          "type": "STRING"
+        },
+        {
+          "name": "notes",
+          "type": "STRING"
+        },
+        {
+          "name": "source_file",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "table": "gold_build_log",
+      "file": "gold_build_log.parquet",
+      "rows": 12,
+      "sha256": "b441e7b6827721e8ae2bb8ca4ec1d7af34f9395fc49e630456b6e45edbdd0bc0",
+      "keys": [
+        "gold_table"
+      ],
+      "columns": [
+        {
+          "name": "build_id",
+          "type": "STRING"
+        },
+        {
+          "name": "gold_table",
+          "type": "STRING"
+        },
+        {
+          "name": "built_at_utc",
+          "type": "STRING"
+        },
+        {
+          "name": "row_count",
+          "type": "INT"
+        },
+        {
+          "name": "question",
+          "type": "STRING"
+        },
+        {
+          "name": "grain",
+          "type": "STRING"
+        },
+        {
+          "name": "scope",
+          "type": "STRING"
+        },
+        {
+          "name": "sources",
+          "type": "STRING"
+        },
+        {
+          "name": "checks_pass",
+          "type": "INT"
+        },
+        {
+          "name": "checks_fail",
+          "type": "INT"
+        },
+        {
+          "name": "checks_warn",
+          "type": "INT"
+        },
+        {
+          "name": "checks_info",
+          "type": "INT"
+        }
+      ]
+    }
+  ]
+}

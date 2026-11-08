@@ -1,0 +1,123 @@
+table,check,category,severity,expected,observed,status,detail,build_id,checked_at
+gold_machine_daily,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_daily,"key (machine_id, gaming_date) unique",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_daily,"key (machine_id, gaming_date) not null",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,key (machine_id) unique,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,key (machine_id) not null,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_bottom_ten,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_bottom_ten,"key (list_name, list_rank) unique",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_bottom_ten,"key (list_name, list_rank) not null",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,"key (zone_id, gaming_date) unique",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,"key (zone_id, gaming_date) not null",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,key (gaming_date) unique,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,key (gaming_date) not null,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,key (operation_id) unique,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,key (operation_id) not null,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,table is not empty,row count,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,"key (period_month, dimension, segment) unique",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,"key (period_month, dimension, segment) not null",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,key (gaming_date) unique,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,key (gaming_date) not null,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,table is not empty,row count,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,"key (section, model, period, metric) unique",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,"key (section, model, period, metric) not null",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,row count matches its source,row count,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,"key (action_type_id, target) unique",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,"key (action_type_id, target) not null",keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,table is not empty,row count,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,key (scenario_id) unique,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,key (scenario_id) not null,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,table is not empty,row count,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,key (evidence_id) unique,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,key (evidence_id) not null,keys,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+volume,uploaded analysis outputs are byte-identical to local files (sha-256),lineage,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+volume,no stale files in the volume that are absent locally,lineage,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,every python validation check passed,lineage,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+*,every gold table rebuilt after the latest silver change,freshness,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+*,every gold table rebuilt in this run,freshness,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_daily,gaming dates span 2025-01-01 to 2025-06-30,freshness,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,gaming dates span 2025-01-01 to 2025-06-30,freshness,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,gaming dates span 2025-01-01 to 2025-06-30,freshness,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,gaming dates span 2025-01-01 to 2025-06-30,freshness,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+*,no unexpected tables in ante_gold,lineage,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+*,no player-level identifier columns in gold,privacy,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,no published cell with fewer than 20 players,privacy,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,suppressed cells expose no measures,privacy,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,no dimension has exactly one suppressed cell (subtraction guard),privacy,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,"suppressed cells (count, for review)",privacy,info,0,0,INFO,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_daily,"totals equal silver on-floor totals (coin-in, house win, theo)",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,"per-machine sums from gold_machine_daily match machine-performance.csv (coin-in, house win, theo, contribution, hours, spins, days)",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,luck z and hit z recomputed in sql match machine-performance.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,M-1158 hit z recomputed from silver meters (reported 124.19),reconciliation,error,124.19,124.19,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,M-1158 luck z recomputed from silver meters (reported -4.57),reconciliation,error,-4.57,-4.57,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,M-1158 is the only machine with |hit z| > 4,reconciliation,error,M-1158,M-1158,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,manager's bottom 10 recomputed in sql from gold_machine_daily,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,downtime join found every machine,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,machines requiring investigation (for review),review,info,0,4,INFO,M-1158: hit rate far from published hit probability (|hit z| > 4): inspect payout configuration; house win vs theo unlikely under published math (bonferroni p < 0.05); M-1240: faults well above its manufacturer rate (fault z >= 3); M-1241: faults well above its manufacturer rate (fault z >= 3); M-1206: faults well above its manufacturer rate (fault z >= 3),26107b2d4a24,2026-11-08T00:41:55Z
+gold_bottom_ten,each list has exactly 10 machines,invariant,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_bottom_ten,original list members still in the adjusted demand list (for review),review,info,0,0,INFO,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,"zone-day sums match demand-zone-daily.csv (coin-in, theo, house win, hours, machines, entries, coverage, period)",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,zones add up to the property every day (no double counting),reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,property days match demand-property-daily.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,"comp, f&b and points match loyalty-daily.csv",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,scheduled and downtime hours recomputed in sql match downtime-daily.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,machine-days add up to silver property_day,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,downtime causes add up to observed downtime hours,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,comp cost counted once: non-comp cogs + comp cost = pos cogs,money rules,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,comp cost total equals silver redemption economic cost,money rules,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,comp face value is never booked as cash,money rules,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,"every ticket matches silver operations (date, machine, cause, hours)",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,ticket hours by cause equal the daily cause allocation,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,estimated lost theo equals the gross lost-play estimate,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,observed downtime equals downtime-summary.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,monthly totals match players-monthly.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,monthly comps match loyalty-monthly.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,"6-month segments match players-groups.csv (tier, region, cohort)",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,"6-month segments match loyalty-groups.csv (tier, region, cohort)",reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,6-month totals match players-summary.csv and loyalty-summary.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,segments add up to the total where nothing is suppressed,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,actual coin-in equals silver property_day every day,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,61 holdout days at horizons 1-61 from origin 2025-04-30,invariant,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,holdout mae recomputed from daily forecasts matches forecast-performance.csv,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,interval flags agree with the interval bounds,invariant,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,disclosure names the weekday-mean baseline as the most accurate on the holdout,disclosure,error,weekday mean,weekday mean,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,ridge 90% interval coverage on the holdout (nominal 0.90),disclosure,info,0,0.508,INFO,31 of 61 holdout days inside the interval vs 90% nominal; the interval is too narrow and understates uncertainty,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,"plan cost $6,600, unallocated $93,400, within budget",budget,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,at most 3 action types funded,budget,error,1,1,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,target costs sum to each action's catalog total,budget,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,plan net low/central/high equals the recommended alternative,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,plan benefit equals the recommended plan by action,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,inspection carries no financial benefit in any scenario,money rules,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,every funded action is evidence-supported and robust or verifiable,budget,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,investment-move-plan.csv net_* columns hold benefit before move cost and downtime (label differs from investment-candidates.csv),label,warn,0,1,WARN,"gold uses them as benefit_* and computes net = benefit - cost - downtime; the sum matches investment-recommended-plan benefit_*, not net_*",26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,infeasible alternatives exceed the budget and feasible ones do not,budget,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,hypothetical inspection recovery is never in the recommended plan,money rules,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,"every row has a class, causal reading and source",labelling,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,associations are never labelled causal,labelling,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,M-1158 hit z and luck z in evidence equal the sql recomputation,reconciliation,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,every scenario is labelled as a scenario or counterfactual estimate,labelling,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-demand.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-downtime.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-forecast.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-investments.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-loyalty.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-players.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+outputs,outputs of analyze-machine-performance.py are newer than the script,freshness,warn,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_daily,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_machine_scorecard,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_bottom_ten,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_zone_daily,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_property_daily,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_downtime_tickets,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_player_segments,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_forecast_daily,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_model_validation,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_investment_plan,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_scenarios,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_evidence,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z
+gold_build_log,snapshot parity: rows and numeric sums equal live gold; no player ids,snapshot,error,0,0,PASS,,26107b2d4a24,2026-11-08T00:41:55Z

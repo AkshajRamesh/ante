@@ -1,0 +1,230 @@
+table,check,category,severity,expected,observed,status,detail,checked_at
+calendar_day,row count equals bronze,row count,error,181,181,PASS,,2026-11-08T00:02:11Z
+calendar_day,key (gaming_date) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+calendar_day,key (gaming_date) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+calendar_day,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_locations,row count equals bronze,row count,error,378,378,PASS,,2026-11-08T00:02:11Z
+floor_locations,key (location_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_locations,key (location_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_locations,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_walkways,row count equals bronze,row count,error,10,10,PASS,,2026-11-08T00:02:11Z
+floor_walkways,key (walkway_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_walkways,key (walkway_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_walkways,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+machines,row count equals bronze,row count,error,310,310,PASS,,2026-11-08T00:02:11Z
+machines,key (machine_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+machines,key (machine_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+machines,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+game_math,row count equals bronze,row count,error,10,10,PASS,,2026-11-08T00:02:11Z
+game_math,key (config_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+game_math,key (config_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+game_math,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,row count equals bronze,row count,error,314,314,PASS,,2026-11-08T00:02:11Z
+placements,key (placement_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,key (placement_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+cost_rules,row count equals bronze,row count,error,9,9,PASS,,2026-11-08T00:02:11Z
+cost_rules,key (cost_rule_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+cost_rules,key (cost_rule_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+cost_rules,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+action_catalog,row count equals bronze,row count,error,13,13,PASS,,2026-11-08T00:02:11Z
+action_catalog,key (action_type_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+action_catalog,key (action_type_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+action_catalog,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+events,row count equals bronze,row count,error,8,8,PASS,,2026-11-08T00:02:11Z
+events,key (event_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+events,key (event_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+events,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,row count equals bronze,row count,error,56110,56110,PASS,,2026-11-08T00:02:11Z
+machine_day,"key (machine_id, gaming_date) unique",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,"key (machine_id, gaming_date) not null",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,row count equals bronze,row count,error,56110,56110,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,"key (machine_id, gaming_date) unique",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,"key (machine_id, gaming_date) not null",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,row count equals bronze,row count,error,181,181,PASS,,2026-11-08T00:02:11Z
+property_day,key (gaming_date) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,key (gaming_date) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_hour,row count equals bronze,row count,error,1321908,1321908,PASS,,2026-11-08T00:02:11Z
+machine_hour,"key (machine_id, hour_start_utc) unique",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_hour,"key (machine_id, hour_start_utc) not null",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_hour,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,row count equals bronze,row count,error,1226,1226,PASS,,2026-11-08T00:02:11Z
+operations,key (operation_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,key (operation_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,row count equals bronze,row count,error,30401,30401,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,"key (sensor_id, hour_start_utc) unique",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,"key (sensor_id, hour_start_utc) not null",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+security_incidents,row count equals bronze,row count,error,3865,3865,PASS,,2026-11-08T00:02:11Z
+security_incidents,key (incident_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+security_incidents,key (incident_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+security_incidents,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+shift_roster,row count equals bronze,row count,error,10317,10317,PASS,,2026-11-08T00:02:11Z
+shift_roster,key (assignment_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+shift_roster,key (assignment_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+shift_roster,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+players,row count equals bronze,row count,error,113890,113890,PASS,,2026-11-08T00:02:11Z
+players,key (player_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+players,key (player_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+players,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,row count equals bronze,row count,error,776297,776297,PASS,,2026-11-08T00:02:11Z
+sessions,key (session_segment_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,key (session_segment_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+trips,row count equals bronze,row count,error,351729,351729,PASS,,2026-11-08T00:02:11Z
+trips,key (observed_visit_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+trips,key (observed_visit_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+trips,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,row count equals bronze,row count,error,782773,782773,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,key (loyalty_event_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,key (loyalty_event_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,row count equals bronze,row count,error,227833,227833,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,key (transaction_id) unique,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,key (transaction_id) not null,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,row count equals bronze,row count,error,148893,148893,PASS,,2026-11-08T00:02:11Z
+player_period,"key (player_id, period_month) unique",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,"key (player_id, period_month) not null",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+visitor_profile_monthly,row count equals bronze,row count,error,42,42,PASS,,2026-11-08T00:02:11Z
+visitor_profile_monthly,"key (month, survey_metric) unique",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+visitor_profile_monthly,"key (month, survey_metric) not null",keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+visitor_profile_monthly,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_weather_daily,row count equals bronze,row count,error,181,181,PASS,,2026-11-08T00:02:11Z
+real_weather_daily,"key (station_id, source_date) unique",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_weather_daily,"key (station_id, source_date) not null",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_weather_daily,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_city_visitation_monthly,row count equals bronze,row count,error,6,6,PASS,,2026-11-08T00:02:11Z
+real_city_visitation_monthly,"key (month, geography) unique",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_city_visitation_monthly,"key (month, geography) not null",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_city_visitation_monthly,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_summary,row count equals bronze,row count,error,74,74,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_summary,"key (metric_id, segment_group, segment) unique",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_summary,"key (metric_id, segment_group, segment) not null",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_summary,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_segments,row count equals bronze,row count,error,1406,1406,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_segments,"key (metric_id, segment_group, segment) unique",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_segments,"key (metric_id, segment_group, segment) not null",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_segments,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_public,row count equals bronze,row count,error,700,700,PASS,,2026-11-08T00:02:11Z
+real_benchmark_public,"key (property_id, category, month) unique",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_public,"key (property_id, category, month) not null",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_public,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_property_monthly,row count equals bronze,row count,error,78,78,PASS,,2026-11-08T00:02:11Z
+real_benchmark_property_monthly,"key (property_id, month) unique",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_property_monthly,"key (property_id, month) not null",keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_property_monthly,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_state_monthly,row count equals bronze,row count,error,6,6,PASS,,2026-11-08T00:02:11Z
+real_benchmark_state_monthly,key (month) unique,keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_state_monthly,key (month) not null,keys,warn,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_state_monthly,no exact duplicate rows,duplicates,error,0,0,PASS,,2026-11-08T00:02:11Z
+*,bronze columns preserved with identical types,schema,error,0,0,PASS,,2026-11-08T00:02:11Z
+*,silver table count,schema,error,31,31,PASS,,2026-11-08T00:02:11Z
+*,real public tables isolated under real_ prefix,data origin,error,7,7,PASS,,2026-11-08T00:02:11Z
+calendar_day,"181 gaming dates, 2025-01-01 to 2025-06-30",date range,error,1,1,PASS,,2026-11-08T00:02:11Z
+calendar_day,days contiguous and non-overlapping,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+calendar_day,scheduled_seconds = end - start,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+calendar_day,"dst gaming day 2025-03-08 has 82,800 seconds",invariant,error,82800,82800,PASS,,2026-11-08T00:02:11Z
+floor_locations,one zone node per zone_id,keys,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_locations,parent_location_id exists,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+floor_locations,every node has a zone_name,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+machines,install_date <= retire_date,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+game_math,configured_rtp between 0 and 1,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,machine_id exists in machines,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,config_id exists in game_math,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,location_id is a slot,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,effective_from < effective_to,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,no overlapping intervals per machine_id,many-to-many guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,no overlapping intervals per location_id,many-to-many guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+placements,in-window starts fall on a gaming-day boundary,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,machine_id exists in machines,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,config_id exists in game_math,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,gaming_date exists in calendar_day,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,date window: 181 dates x 310 machines,date range,error,1,1,PASS,,2026-11-08T00:02:11Z
+machine_day,house_win = coin_in - payout (integer cents),money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,theo = coin_in x (1 - configured rtp),theo vs actual,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,carded subsets <= totals,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,available <= scheduled seconds,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,occupied <= available seconds,invariant,warn,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,no play recorded on off-floor rows,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,active rows have a location,referential integrity,warn,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,location_id matches the placement covering the day start,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,dollar columns equal machine_day cents,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,"accounting identities (house win, luck, contribution)",money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,"1,018 off-floor rows (null location)",invariant,error,1018,1018,PASS,,2026-11-08T00:02:11Z
+prepared_daily_view,model-safe 7-day lag uses only prior days,leakage guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,daily totals equal the sum of machine-days,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,house win and contribution identities,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,comp cost is inside pos cogs (never above it),comp double count guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,"pos cash, cogs and comps equal fnb tickets by gaming date",money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+property_day,faults_opened equals fault tickets by opened gaming date,invariant,warn,0,0,PASS,,2026-11-08T00:02:11Z
+machine_hour,hourly meters sum to machine_day,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_hour,machine_id exists in machines,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,machine_id exists in machines,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,location_id exists in floor_locations,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,event_type in documented set,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,available_at >= opened_at,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+operations,work starts inside the outage,invariant,warn,0,0,PASS,,2026-11-08T00:02:11Z
+operations,opened inside the analysis window,date range,warn,0,0,PASS,,2026-11-08T00:02:11Z
+operations,unresolved tickets (no available_at),review,info,0,0,INFO,,2026-11-08T00:02:11Z
+players,observed_through after enrollment,invariant,warn,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,player_id exists in players,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,machine_id exists in machines,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,config_id exists in game_math,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,observed_visit_id exists in trips,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,gaming_date exists in calendar_day,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,session player matches its visit's player,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,gaming_date matches the start time,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,segment ends by the gaming-day end (split at 06:00),invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,coin_in = fixed bet x paid spins,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,theo = coin_in x (1 - configured rtp),theo vs actual,error,0,0,PASS,,2026-11-08T00:02:11Z
+sessions,carded totals by machine-day equal machine_day carded meters,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+trips,player_id exists in players,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+trips,first_observed <= last_observed,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,tracked money identities,money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,comp cost is inside linked pos cogs,comp double count guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,"coin-in, payout and theo equal sessions by player and gaming month",money invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+player_period,player_id exists in players,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,player_id exists in players,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,event_type in award/redeem,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,"awards add points, redemptions spend points",invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,award source segment exists in sessions,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,each redemption links to exactly one fnb ticket,many-to-many guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,redemption economic cost equals the linked ticket cogs,comp double count guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+loyalty_ledger,events after the window end kept and flagged,review,info,0,1,INFO,,2026-11-08T00:02:11Z
+fnb_transactions,each comp ticket has exactly one redemption,many-to-many guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,comp_id is the redemption that paid for it,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,comps carry no cash receipt,comp double count guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,non-negative money,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,outlet_id exists in floor_locations,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,carded player_id exists in players,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,visit exists and belongs to the same player,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,"comp cost total equals redemption economic cost total (same money, count once)",comp double count guard,error,0,0,PASS,,2026-11-08T00:02:11Z
+fnb_transactions,tickets outside the window kept and flagged,review,info,0,0,INFO,,2026-11-08T00:02:11Z
+zone_traffic_hourly,entries null exactly when the counter is offline,missing is not zero,error,0,0,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,coverage_minutes between 0 and 60,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,zone_id is a zone,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+zone_traffic_hourly,hours inside the analysis window,date range,warn,0,0,PASS,,2026-11-08T00:02:11Z
+events,start <= end and announced <= start,invariant,warn,0,0,PASS,,2026-11-08T00:02:11Z
+security_incidents,zone and machine exist,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+security_incidents,severity 1-3 and reported after occurrence,invariant,warn,0,0,PASS,,2026-11-08T00:02:11Z
+shift_roster,gaming_date and zone exist,referential integrity,error,0,0,PASS,,2026-11-08T00:02:11Z
+shift_roster,end after start and non-negative headcount,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+cost_rules,rate parses as a decimal,invariant,error,0,0,PASS,,2026-11-08T00:02:11Z
+action_catalog,"guide lease example costs $3,380",invariant,error,3380,3380,PASS,,2026-11-08T00:02:11Z
+real_weather_daily,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_city_visitation_monthly,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_summary,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_visitor_profile_segments,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_public,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_property_monthly,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+real_benchmark_state_monthly,every row carries source url and sha-256 provenance,data origin,error,0,0,PASS,,2026-11-08T00:02:11Z
+machine_day,machines with hit rate |z| > 4 vs published hit probability,review,info,0,1,INFO,M-1158 z=124.2,2026-11-08T00:02:11Z
+machine_day,"machine-days with negative house win (valid, preserved)",review,info,0,7117,INFO,,2026-11-08T00:02:11Z
+player_period,"player-months with a net loss (negative tracked net, preserved)",review,info,0,109404,INFO,,2026-11-08T00:02:11Z
+zone_traffic_hourly,"offline counter hours (null, not zero)",review,info,0,153,INFO,,2026-11-08T00:02:11Z
