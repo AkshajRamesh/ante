@@ -81,20 +81,15 @@ pages = [
 page = st.navigation(pages)
 
 try:
-    source = gold()
+    gold()
 except GoldError as exc:
     st.error(str(exc), title="Gold snapshot could not be verified")
     st.stop()
-
-provenance = source.provenance()
 
 install_type()
 
 with st.sidebar:
     st.header("ante", anchor=False)
-    st.caption("The Gilded Ace")
-    st.caption(f"Snapshot {provenance['build_id']}")
-    st.caption("Verified local parquet")
 
 page.run()
 ask_dock(page.title)

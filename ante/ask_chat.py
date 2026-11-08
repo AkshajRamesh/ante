@@ -110,7 +110,7 @@ def _styles() -> None:
         .st-key-ask_dock {
             position: fixed !important;
             right: 1.05rem !important;
-            bottom: calc(1.05rem + 60px) !important;
+            bottom: 50px !important;
             z-index: 1000002 !important;
             margin: 0 !important;
         }
@@ -222,7 +222,7 @@ def _styles() -> None:
         @media (max-width: 700px) {
             .st-key-ask_dock:has(.ask-panel) {
                 right: 0.5rem !important;
-                bottom: calc(0.5rem + 60px) !important;
+                bottom: 50px !important;
                 width: calc(100vw - 1rem) !important;
                 max-height: min(70vh, calc(100dvh - 8.5rem));
             }
