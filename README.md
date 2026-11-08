@@ -1,68 +1,89 @@
 # ante
-**[Launch ante - Live Dashboard](https://ante-tamu-datathon.streamlit.app)**
 
-ante is a floor-strategy dashboard for **The Gilded Ace**, a fictional casino. It answers the six Dashboard Royale questions with verified Gold figures, and it keeps observed results, statistical estimates, forecasts, and the July investment scenario apart.
+The ten lowest-earning slots are the wrong ten to replace.
 
-The public app does not query Databricks. It reads the sanitized snapshot in `snapshot/` and checks `snapshot/manifest.json` (SHA-256, row count, column names, and column types) before drawing a figure. A failed check stops the page instead of inventing a number.
+**[Live Dashboard](https://ante-tamu-datathon.streamlit.app)** · **[Source Code](https://github.com/AkshajRamesh/ante)**
 
-## The six questions
+The Gilded Ace, a fictional casino, has $100,000 to invest and is considering replacing its ten lowest-earning slot machines. We tested whether raw earnings identify underperformance once exposure, demand, and the published game math are taken into account.
 
-1. **Machine performance.** Raw house win is the wrong replacement list. None of the original bottom ten remains in the demand-adjusted bottom ten. Eight of the ten are still among the weakest on theoretical win per available hour.
-2. **Demand and location.** Back Forty coin-in per available hour fell about 30.8% while the walkway was closed, relative to other zones. That is a conditional association, not proof that the closure caused the drop. Four earlier relocations are a small sample.
-3. **Downtime and operations.** The floor stayed about 99.62% available. The large maintenance options were priced and left out of the July plan.
-4. **Players.** Carded play is concentrated. A few tracked players place most of the wagers. Figures are group totals, not guest records.
-5. **Loyalty.** Comps and the May 1 points-price change are reported as associations. The change is not treated as a proven cause.
-6. **Investment.** Of a $100,000 July budget, the plan spends **$6,600** and leaves **$93,400** unspent. The funded actions are one inspection of M-1158 ($1,200) and three machine moves. Central net theoretical benefit is **$13,272**, with a low case of **$2,059** and a high case of **$22,724**. Those are July scenarios, not money already earned. M-1158 is an inspection lead because its hit rate and hold diverge from the published game math. It is not a fraud or malfunction finding.
+**Don't replace the bottom ten.**
 
-## Bronze, Silver, Gold
+## The decision
 
-| Layer | Where it lives | What this repository contains |
+| | |
+| --- | ---: |
+| Budget | $100,000 |
+| Recommended spend | $6,600 |
+| Unallocated | $93,400 |
+| Low / central / high net theoretical win | +$2,059 / +$13,272 / +$22,724 |
+
+Inspect M-1158 for $1,200. Relocate M-1154 and M-1184 to Center Pit, and M-1157 to Hotel Corridor, at $1,800 each.
+
+Those figures are prospective July scenarios for net theoretical win, not observed or guaranteed earnings. The unspent $93,400 is the recommendation: the larger options are over budget, negative after cost, or rest on an association that is not causal. Assumptions and the review rule are on [Investment Decision](https://ante-tamu-datathon.streamlit.app/investment).
+
+## Key findings
+
+January–June 2025. Six-month ranks and the July plan stay fixed when a date filter changes.
+
+| Area | Key finding | Decision implication |
 | --- | --- | --- |
-| Bronze | Databricks, loaded from the source files | `scripts/load-bronze.py` |
-| Silver | Databricks, same rows as Bronze plus a few derived columns | `scripts/build-silver.py` and `docs/silver-data-contract.md` |
-| Gold | Aggregated tables the dashboard is allowed to publish | `scripts/build-gold.py`, `docs/gold-data-contract.md`, and `snapshot/` |
+| [Machine performance](https://ante-tamu-datathon.streamlit.app/machines) | 0 of the original bottom ten remain in the demand-index bottom ten. Eight remain among the ten weakest on theoretical win per available hour. M-1158’s hold is 3.04% against a 10% theoretical hold. | Inspect M-1158. Do not replace the raw bottom ten. |
+| [Demand](https://ante-tamu-datathon.streamlit.app/demand) | Back Forty coin-in per available hour fell 30.8% relative to other zones during the walkway closure. Traffic fell 31.4% on the same comparison. | Association, not a proven cause. Test three relocations. |
+| [Downtime](https://ante-tamu-datathon.streamlit.app/downtime) | Availability was 99.62%. Downtime was 5,021 hours. | Maintenance alternatives did not justify their cost. |
+| [Players](https://ante-tamu-datathon.streamlit.app/players) | The top 5% of carded wagerers account for 52.1% of $163.8 million in carded wagers. | Aggregates only. No guest-level action. |
+| [Loyalty](https://ante-tamu-datathon.streamlit.app/players) | Six-month comp cost was $190,669.30 and is already inside F&B cost of goods. | Leave comps unchanged. That cost is already counted. |
+| [Investment](https://ante-tamu-datathon.streamlit.app/investment) | One inspection and three relocations, instead of replacing the bottom ten. | Spend $6,600. Leave $93,400 unallocated. |
 
-Reproducing that pipeline requires the original datasets and a Databricks workspace. The scripts are the engineering record. They are not run by the dashboard.
+## Model validation
 
-`audit/` holds the aggregate check reports from the build: row counts, key checks, null rates, and lineage. Those files name columns such as `player_id` when a check targets that column. They do not contain guest rows.
+The forecast predicts daily property-level machine coin-in. Training and selection use January–April 2025, the origin is frozen on April 30, and the holdout is May 1–June 30: 61 days that were not used to choose the model.
 
-Player-level Silver tables stay in Databricks. Gold fails the build if a publishable table contains `player_id` or the other forbidden identifiers. Guest figures in the snapshot are segments. A cell is suppressed below 20 players. In this build the smallest published cell is 129 players.
+| Model | Holdout MAE |
+| --- | ---: |
+| Weekday mean | $68,699 |
+| Ridge regression | $73,652 |
+| Constant mean | $218,258 |
 
-## Ask ante
+Ridge won the February–April selection folds, so it was carried forward. On the holdout, the weekday mean was lower. The ridge-minus-weekday MAE gap is $4,954, and its 95% interval, from −$1,293 to $11,150, includes zero. The nominal 90% prediction interval covered 31 of 61 days. Both models picked the same lower-demand maintenance days, so ridge added no decision value. Charts and methods are on [Model Validation](https://ante-tamu-datathon.streamlit.app/validation).
 
-Ask ante is a floating assistant on every page, powered by Gemini. It answers from a small packet of validated Gold facts, checks that cited figures appear in that packet, and labels the source, for example `Investment Decision · Q6`. It does not run SQL or Python, and it does not receive guest-level records.
+## Databricks
 
-Each browser session allows 30 questions. Opening the panel does not call the API.
+- **Data pipeline:** Raw Parquet → Bronze → Silver → Gold → Verified Snapshot → Streamlit
+- **AI assistant:** Verified Snapshot → Ask ante → Gemini API
 
-### Configure the key
+| Layer | Purpose | Validation |
+| --- | --- | --- |
+| Bronze | 31 ingested Delta tables | 31 verified loads |
+| Silver | 31 validated tables | 222 pass, 0 fail, 7 info |
+| Gold | 12 analytical tables | 117 pass, 0 fail, 1 warning, 4 info |
 
-Create `.streamlit/secrets.toml` locally. That file is gitignored.
+The public app reads a manifest-verified Gold snapshot (build `26107b2d4a24`), not a live Databricks query. The one Gold warning is a mislabeled source column; Gold recomputes net, and the plan totals match.
 
-```toml
-GEMINI_API_KEY = "your-key"
-```
+[Bronze](scripts/load-bronze.py) · [Silver](scripts/build-silver.py) · [Gold](scripts/build-gold.py) · [Silver contract](docs/silver-data-contract.md) · [Gold contract](docs/gold-data-contract.md) · [Bronze audit](audit/bronze-load-audit.csv) · [Silver audit](audit/silver-quality-audit.csv) · [Gold audit](audit/gold-quality-audit.csv) · [Lineage](audit/gold-lineage.csv) · [Manifest](snapshot/manifest.json)
 
-On Streamlit Community Cloud, paste the same line into the app's Advanced settings secrets. Do not commit the key, print it, or put it in source.
+## Ask ante, powered by Gemini
 
-Without a key, the seven analytical pages still run. Ask ante reports that Gemini is not configured.
+Ask ante is the floating assistant on every page. It calls Google's Gemini API, answers from a retrieved packet of verified Gold facts, and checks that cited numbers and scenario language stay tied to that packet. A July projection is not presented as guaranteed revenue. Gemini does not compute the original statistics or query Databricks.
+
+[ante/analyst.py](ante/analyst.py) · [ante/evidence.py](ante/evidence.py) · [ante/ask_chat.py](ante/ask_chat.py)
+
+## Reproducibility
+
+The Gilded Ace is fictional. Guest-level records and raw datasets are not published. The app checks [snapshot/manifest.json](snapshot/manifest.json) — hash, row count, and column types — before it draws. The original statistical scripts are not in this repository, so the estimates cannot be rebuilt from raw rows here. Closure results are observational. July figures are scenarios, not guaranteed outcomes. ChatGPT and Cursor coding agents (Claude and Grok) assisted development. Gemini powers Ask ante.
 
 ## Run locally
 
-Python 3.11 or newer.
+Python 3.12. The seven pages run from the snapshot and need no Databricks credentials. On macOS or Linux, use `python3` in place of `python`.
 
 ```powershell
+git clone https://github.com/AkshajRamesh/ante.git
+cd ante
 python -m pip install -r requirements.txt
 python -m streamlit run streamlit_app.py
 ```
 
-Open http://localhost:8501.
+Open http://localhost:8501. Ask ante needs an untracked `.streamlit/secrets.toml`. Without it, the rest of the dashboard still runs.
 
-Leave `ANTE_GOLD_SOURCE` unset, or set it to `snapshot`. Setting it to `databricks` stops the app. Live warehouse reads are not connected, and the app will not pretend the snapshot is a live query.
-
-## Limits
-
-- Ratios are ratios of sums, not averages of daily ratios.
-- A date filter changes observed floor totals. It does not recompute the six-month ranks, the forecast, or the July plan.
-- The weekday-average forecast had a lower May–June holdout error than ridge. Ridge did not win the holdout.
-- The forecast's nominal 90% band is a prediction interval for one day. It is not the confidence interval on the holdout error.
-- The snapshot is a fixed build (`26107b2d4a24`). Refreshing the dashboard does not refresh Databricks.
+```toml
+GEMINI_API_KEY = "your-key"
+```
